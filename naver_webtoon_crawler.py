@@ -10,6 +10,7 @@ soup = BeautifulSoup(html, 'html.parser')
 
 title = soup.find_all('a', {'class' : 'title'}) # a태그에서 class='title'인 html소스를 찾아 할당
 id_list = [] ; title_list = [] ; author_list = [] ; day_list = [] ; genre_list = [] ; story_list = [] ; platform_list = []
+num = 0
 
 driver = webdriver.Chrome('C:/chromedriver.exe') # 크롬 사용하니까
 driver.get(URL)
@@ -34,7 +35,7 @@ for i in range(len(title)):
         driver.back()
         continue
 
-    id_list.append(i)  # id 리스트에 추가
+    id_list.append(num) ; num += 1  # id 리스트에 추가
     title_list.append(t)  # 제목 리스트에 추가
     day_list.append(day) # 요일 리스트에 추가
     platform_list.append('네이버 웹툰') # 플랫폼 리스트에 추가
@@ -54,7 +55,7 @@ for i in range(len(title)):
 
     driver.back() # 뒤로 가기
 
-############################################크롤링 끝####################################
+############################################크롤링 끝############################################
 
 cols = []
 total_data = pd.DataFrame(columns = cols)

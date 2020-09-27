@@ -57,8 +57,7 @@ for i in range(len(title)):
 
 ############################################크롤링 끝############################################
 
-cols = []
-total_data = pd.DataFrame(columns = cols)
+total_data = pd.DataFrame()
 total_data['id'] = id_list
 total_data['title'] = title_list
 total_data['author'] = author_list

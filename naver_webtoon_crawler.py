@@ -45,7 +45,6 @@ for i in range(len(title)):
     author_list.append(author) # 작가 리스트에 추가
 
     genre = soup.find('span', {'class' : 'genre'}).text # 장르 수집
-    genre.replace("개그", "코믹") # 다음 웹툰과 장르 명칭 통합 위해
     genre_list.append(genre) # 장르 리스트에 추가
 
     story = soup.find_all('p') # 줄거리 수집

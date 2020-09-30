@@ -24,7 +24,7 @@ for i in range(7): #월요일부터 일요일까지
     title = soup.find_all('strong', {'class': 'tit_wt'}) # 제목 수집
     author = soup.find_all('span', {'class': 'txt_info'}) # 작가 수집
     day = soup.find('a', {'class': 'btn_comm link_tab on'}) # 요일 수집
-    p = 0
+    p = 0 # 첫 번째 작품 링크부터 들어가기 위해
 
     for j in range(len(title)):
         t = title[j].text

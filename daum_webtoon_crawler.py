@@ -57,7 +57,7 @@ for i in range(7): #월요일부터 일요일까지
             )
         )
 
-        html =  driver.page_source
+        html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser') # 장르, 줄거리 가져오기 위해 현재 페이지 파싱
 
         genre = soup.find('dd', {'class': 'txt_genre'}).text.strip() # 장르 수집 (strip은 개행 제거 함수)
